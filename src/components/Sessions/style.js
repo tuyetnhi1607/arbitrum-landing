@@ -26,10 +26,13 @@ export const SessionWrapper = styled.section`
   max-width: var(--max-content-width);
   padding: 60px 20px;
   scroll-snap-align: center;
-  height: 50vh;
-  /* @media (min-width: 768px) {
-    height: 100vh;
-  } */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 768px) {
+    padding: 10px 70px;
+  }
 `;
 
 const textAnimation = keyframes`
@@ -75,6 +78,7 @@ export const SessionTwoWrapper = styled(motion.div)`
   @media (min-width: 768px) {
     justify-content: space-evenly;
     flex-direction: ${({ reverse }) => (!!reverse ? "row-reverse" : "row")};
+    gap: 10%;
   }
 `;
 
@@ -96,6 +100,9 @@ export const TextBox = styled(motion.div)`
   @media (min-width: 530px) {
     padding: 40px;
   }
+  @media (min-width: 768px){
+    flex: 1;
+  }
 `;
 
 export const TextBoxThree = styled(TextBox)`
@@ -115,7 +122,8 @@ export const ImageBox = styled(motion.div)`
     height: 100%;
   }
   @media (min-width: 768px) {
-    max-width: 500px;
+    max-width: 580px;
+    width: 50%;
   }
 `;
 

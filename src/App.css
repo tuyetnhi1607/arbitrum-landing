@@ -22,15 +22,18 @@ main {
   width: 100%;
   align-items: center;
   overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
-main>*{
-  scroll-snap-align: center;
-  min-height: 100vh;
+main>section{
+  min-height: unset;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -41,4 +44,14 @@ main>*{
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: none;
   background: var(--mid-grey-darker);
+}
+
+@media (min-width: 768px){
+  ::-webkit-scrollbar {
+    display: block;
+  }
+  main>section{
+    scroll-snap-align: center;
+    min-height: 100vh;
+  }
 }

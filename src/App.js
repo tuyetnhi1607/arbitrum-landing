@@ -15,8 +15,8 @@ function App() {
   return (
     <div className="App">
       <Stars />
-      <Header />
       <main>
+        <Header />
         <SessionOne />
         <SessionTwo
           description="A professor observed scalability issues in blockchain technology that predated Ethereum’s launch."
@@ -24,13 +24,13 @@ function App() {
           reverse={false}
         />
         <SessionTwo
-        reverse={false}
+          reverse={false}
           description=" He crafted an idea for resolving conflicting blockchain updates with
             interactive fraud proofs. These proofs require back-and-forth
             communication between parties to find the true chain state."
         />
         <SessionTwo
-        reverse={false}
+          reverse={false}
           description="Years passed until two Ph.D. students met with their professor and
           committed to building out their vision for a scalable blockchain
           solution."
@@ -43,9 +43,9 @@ function App() {
           image={story_2}
         >
           <Ball
-            x="calc(80%)"
-            y="-15%"
-            width="30%"
+            x="80%"
+            y="-10%"
+            width="25%"
             maxWidth="350px"
             color="silver"
           />
@@ -68,25 +68,25 @@ function App() {
           image={story_4}
           reverse={true}
         />
-        <SessionTwo reverse={false} description="Armed with battle-tested infrastructure, Arbitrum is ready to decentralize and The Arbitrum Foundation will distribute voting power via the ARB token.">
-          <Ball
-            x="50%"
-            y="-10%"
-            width="50%"
-            maxWidth="550px"
-            color="blue"
-          />
+        <SessionTwo
+          reverse={false}
+          description="Armed with battle-tested infrastructure, Arbitrum is ready to decentralize and The Arbitrum Foundation will distribute voting power via the ARB token."
+        >
+          <Ball x="50%" y="-10%" width="50%" maxWidth="550px" color="blue" />
         </SessionTwo>
-        <SessionTwo reverse={false} description="This token gives the community control in shaping the very foundation and future of Arbitrum and Ethereum." />
-        <SessionTwo reverse={false} description="The Arbitrum DAO will be controlled by no single entity. Token holders can either delegate or retain their voting power. Decentralized governance is a nascent concept and we are purposefully allowing space for the community to guide its formation." />
-        <SessionThree reverse={false} description="With great power comes great responsibility.">
-          <Ball
-            x="-30%"
-            y="-50%"
-            width="70%"
-            maxWidth="850px"
-            color="purple"
-          />
+        <SessionTwo
+          reverse={false}
+          description="This token gives the community control in shaping the very foundation and future of Arbitrum and Ethereum."
+        />
+        <SessionTwo
+          reverse={false}
+          description="The Arbitrum DAO will be controlled by no single entity. Token holders can either delegate or retain their voting power. Decentralized governance is a nascent concept and we are purposefully allowing space for the community to guide its formation."
+        />
+        <SessionThree
+          reverse={false}
+          description="With great power comes great responsibility."
+        >
+          <Ball x="-30%" y="-50%" width="70%" maxWidth="850px" color="purple" />
         </SessionThree>
         <SessionFour />
       </main>

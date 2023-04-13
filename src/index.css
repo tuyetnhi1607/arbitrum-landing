@@ -6,10 +6,6 @@
 
 body{
   font-size: 14px;
+  overflow: hidden;
 }
 
-html {
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(50vh);
-  scroll-snap-type: y mandatory;
-}

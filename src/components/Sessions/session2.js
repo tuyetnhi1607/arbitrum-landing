@@ -26,7 +26,6 @@ function SessionTwo({
     <SessionWrapper ref={ref}>
       {children}
       <SessionTwoWrapper
-      
         initial="offscreen"
         whileInView="onscreen"
         reverse={!!reverse}
