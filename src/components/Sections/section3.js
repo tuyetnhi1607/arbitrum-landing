@@ -1,9 +1,7 @@
 import React from "react";
 import {
-  ImageBox,
   SectionTwoWrapper,
   SectionWrapper,
-  TextBox,
   TextBoxThree,
   scaleVariants,
 } from "./style";

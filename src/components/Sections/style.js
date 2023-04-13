@@ -3,18 +3,20 @@ import styled, { keyframes } from "styled-components";
 
 export const scaleVariants = {
   offscreen: {
-    scale: 0,
-    opacity: 0,
+    scale: 0.3,
+    opacity: 0.4,
+    y: 100,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: "easeInOut",
     },
   },
   onscreen: {
     scale: 1,
     opacity: 1,
+    y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: "easeInOut",
     },
   },
@@ -25,13 +27,13 @@ export const SectionWrapper = styled.section`
   width: 100%;
   max-width: var(--max-content-width);
   padding: 60px 20px;
-  scroll-snap-align: center;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (min-width: 768px) {
     padding: 10px 70px;
+    scroll-snap-align: center;
   }
 `;
 
@@ -170,28 +172,38 @@ export const SectionFourWrapper = styled(motion.div)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  @media (min-width: 768px){
-    height: 100vh;
+  @media (min-width: 768px) {
+    height: 100vh; 
+    overflow-y: clip;
   }
 `;
 
 export const ImageBoxFour = styled(ImageBox)`
   width: 100%;
-  transform: scale(1.3) translateY(-20%);
-  filter: grayscale(0.);
-  @media (min-width: 768px) {
-    max-width: unset;
-    transform: unset;
-  }
+  transform: scale(1.15) translateY(-20%);
   & > img {
     box-shadow: unset;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    @media (min-width: 768px) {
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  @media (min-width: 768px) {
+    max-width: unset;
+    & > img {
       box-shadow: 0 8rem 26rem hsla(0, 0%, 100%, 0.37);
     }
-
+    &::after {
+      background-color: unset;
+    }
   }
 `;
 
@@ -200,11 +212,12 @@ export const DocsBox = styled(motion.div)`
   backdrop-filter: blur(3em);
   position: absolute;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   max-width: 580px;
   color: var(--white);
   border-radius: 10px;
-  padding: 40px;
+  padding: 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -214,6 +227,9 @@ export const DocsBox = styled(motion.div)`
     letter-spacing: 0.0075em;
     line-height: 1.5;
     font-size: clamp(1.1428571429em, 2.5vw, 1.9em);
+  }
+  @media (min-width: 769px) {
+    padding: 40px;
   }
 `;
 
@@ -234,12 +250,18 @@ export const Button = styled.div`
   border-radius: 100px;
   text-transform: uppercase;
   font-size: clamp(0.8571428571em, 1vw, 1.1428571429em);
-  @media (min-width: 769px) {
-    padding: 14px 25px;
+  & > svg {
+    width: 15px;
   }
   &:hover {
     color: var(--white);
     background-color: var(--mid-grey-darker-2);
     border-color: var(--mid-grey-darker-2);
+  }
+  @media (min-width: 768px) {
+    padding: 14px 25px;
+    & > svg {
+      width: 20px;
+    }
   }
 `;

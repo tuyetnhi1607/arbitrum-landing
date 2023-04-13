@@ -1,15 +1,15 @@
-import "./App.css";
-import Header from "./components/Header";
-import SectionOne from "./components/Sections/section1";
-import SectionTwo from "./components/Sections/section2";
 import story_1 from "../src/assets/images/story_1.webp";
 import story_2 from "../src/assets/images/story_2.webp";
 import story_3 from "../src/assets/images/story_3.webp";
 import story_4 from "../src/assets/images/story_4.webp";
-import Stars from "./components/Stars";
+import "./App.css";
 import Ball from "./components/Ball";
+import Header from "./components/Header";
+import SectionOne from "./components/Sections/section1";
+import SectionTwo from "./components/Sections/section2";
 import SectionThree from "./components/Sections/section3";
 import SectionFour from "./components/Sections/section4";
+import Stars from "./components/Stars";
 
 function App() {
   return (
@@ -42,13 +42,7 @@ function App() {
           reverse={true}
           image={story_2}
         >
-          <Ball
-            x="80%"
-            y="-10%"
-            width="25%"
-            maxWidth="350px"
-            color="silver"
-          />
+          <Ball x="80%" y="-10%" width="25%" maxWidth="350px" color="silver" />
         </SectionTwo>
         <SectionTwo
           description="After many iterations and a few new gray hairs, the entire system –

@@ -1,6 +1,7 @@
 import React from "react";
 import hero_1 from "../../assets/images/hero_1.webp";
 import { ReactComponent as CopyIcon } from "../Icons/copy.svg";
+import * as rdd from 'react-device-detect';
 import {
   BoxVariant,
   Button,
@@ -12,13 +13,18 @@ import {
 } from "./style";
 
 function SectionFour() {
+  const isMobile =rdd.isMobile;
+
   return (
     <SectionWrapper>
-      <SectionFourWrapper initial="offscreen" whileInView="onscreen">
-        <ImageBoxFour variants={ImageScale}>
+      <SectionFourWrapper
+        initial="offscreen"
+        whileInView="onscreen"
+      >
+        <ImageBoxFour variants={isMobile ? {} : ImageScale}>
           <img src={hero_1} alt="hero_1" />
         </ImageBoxFour>
-        <DocsBox variants={BoxVariant}>
+        <DocsBox variants={isMobile ? {} : BoxVariant}>
           <p>
             The community is the future of Arbitrum.
             <br /> Welcome traveler.

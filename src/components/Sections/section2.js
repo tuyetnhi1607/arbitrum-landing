@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from "react";
 import {
   ImageBox,
   SectionTwoWrapper,
@@ -6,12 +6,6 @@ import {
   TextBox,
   scaleVariants,
 } from "./style";
-import { useScroll, useTransform } from 'framer-motion';
-
-function useParallax(value, distance) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
 
 function SectionTwo({
   description = "",
@@ -19,17 +13,13 @@ function SectionTwo({
   reverse = false,
   children,
 }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 0);
   return (
-    <SectionWrapper ref={ref}>
+    <SectionWrapper>
       {children}
       <SectionTwoWrapper
         initial="offscreen"
         whileInView="onscreen"
         reverse={!!reverse}
-        style={{ y }}
       >
         <TextBox variants={scaleVariants}>
           <p>{description}</p>
@@ -44,4 +34,4 @@ function SectionTwo({
   );
 }
 
-export default SectionTwo
+export default SectionTwo;
