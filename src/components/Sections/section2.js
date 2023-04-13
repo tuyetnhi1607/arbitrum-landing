@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import {
   ImageBox,
-  SessionTwoWrapper,
-  SessionWrapper,
+  SectionTwoWrapper,
+  SectionWrapper,
   TextBox,
   scaleVariants,
 } from "./style";
@@ -13,7 +13,7 @@ function useParallax(value, distance) {
 }
 
 
-function SessionTwo({
+function SectionTwo({
   description = "",
   image = "",
   reverse = false,
@@ -23,9 +23,9 @@ function SessionTwo({
   const { scrollYProgress } = useScroll({ target: ref });
   const y = useParallax(scrollYProgress, 0);
   return (
-    <SessionWrapper ref={ref}>
+    <SectionWrapper ref={ref}>
       {children}
-      <SessionTwoWrapper
+      <SectionTwoWrapper
         initial="offscreen"
         whileInView="onscreen"
         reverse={!!reverse}
@@ -39,9 +39,9 @@ function SessionTwo({
             <img src={image} alt="story_1" />
           </ImageBox>
         )}
-      </SessionTwoWrapper>
-    </SessionWrapper>
+      </SectionTwoWrapper>
+    </SectionWrapper>
   );
 }
 
-export default SessionTwo
+export default SectionTwo

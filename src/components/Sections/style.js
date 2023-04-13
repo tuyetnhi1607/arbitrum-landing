@@ -20,7 +20,7 @@ export const scaleVariants = {
   },
 };
 
-export const SessionWrapper = styled.section`
+export const SectionWrapper = styled.section`
   position: relative;
   width: 100%;
   max-width: var(--max-content-width);
@@ -49,7 +49,7 @@ const textAnimation = keyframes`
     }
 `;
 
-export const SessionOneWrapper = styled.div`
+export const SectionOneWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ export const SessionOneWrapper = styled.div`
   }
 `;
 
-export const SessionTwoWrapper = styled(motion.div)`
+export const SectionTwoWrapper = styled(motion.div)`
   position: relative;
   display: flex;
   flex-direction: ${({ reverse }) => (!!reverse ? "column-reverse" : "column")};
@@ -100,7 +100,7 @@ export const TextBox = styled(motion.div)`
   @media (min-width: 530px) {
     padding: 40px;
   }
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     flex: 1;
   }
 `;
@@ -129,46 +129,117 @@ export const ImageBox = styled(motion.div)`
 
 export const ImageScale = {
   offscreen: {
-    opacity: 0,
     scale: 0.3,
+    opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 3,
       ease: "easeInOut",
     },
   },
   onscreen: {
-    opacity: 1,
     scale: 2.5,
+    opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 3,
+      delay: 1,
       ease: "easeInOut",
     },
   },
 };
 
-export const SessionFourWrapper = styled(motion.div)`
+export const BoxVariant = {
+  offscreen: {
+    top: "200%",
+    transition: {
+      duration: 3,
+      ease: "easeInOut",
+    },
+  },
+  onscreen: {
+    top: "50%",
+    transition: {
+      duration: 3,
+      delay: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+export const SectionFourWrapper = styled(motion.div)`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  & > img {
-
+  width: 100%;
+  @media (min-width: 768px){
+    height: 100vh;
   }
 `;
 
 export const ImageBoxFour = styled(ImageBox)`
-  position: sticky;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 300px;
+  width: 100%;
+  transform: scale(1.3) translateY(-20%);
+  filter: grayscale(0.);
   @media (min-width: 768px) {
     max-width: unset;
+    transform: unset;
   }
   & > img {
+    box-shadow: unset;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @media (min-width: 768px) {
+      box-shadow: 0 8rem 26rem hsla(0, 0%, 100%, 0.37);
+    }
+
+  }
+`;
+
+export const DocsBox = styled(motion.div)`
+  background-color: rgba(0, 0, 0, 0.43);
+  backdrop-filter: blur(3em);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 580px;
+  color: var(--white);
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  & > p {
+    letter-spacing: 0.0075em;
+    line-height: 1.5;
+    font-size: clamp(1.1428571429em, 2.5vw, 1.9em);
+  }
+`;
+
+export const Button = styled.div`
+  cursor: pointer;
+  padding: 12px 20px 11px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  width: 100%;
+  transition: all 0.2s linear;
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: clamp(0.8571428571em, 1vw, 1.1428571429em);
+  @media (min-width: 769px) {
+    padding: 14px 25px;
+  }
+  &:hover {
+    color: var(--white);
+    background-color: var(--mid-grey-darker-2);
+    border-color: var(--mid-grey-darker-2);
   }
 `;

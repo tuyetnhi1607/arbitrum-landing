@@ -1,18 +1,18 @@
 import React from "react";
 import {
   ImageBox,
-  SessionTwoWrapper,
-  SessionWrapper,
+  SectionTwoWrapper,
+  SectionWrapper,
   TextBox,
   TextBoxThree,
   scaleVariants,
 } from "./style";
 
-function SessionThree({ description = "", reverse = false, children }) {
+function SectionThree({ description = "", reverse = false, children }) {
   return (
-    <SessionWrapper>
+    <SectionWrapper>
       {children}
-      <SessionTwoWrapper
+      <SectionTwoWrapper
         initial="offscreen"
         whileInView="onscreen"
         reverse={!!reverse}
@@ -20,9 +20,9 @@ function SessionThree({ description = "", reverse = false, children }) {
         <TextBoxThree variants={scaleVariants}>
           <p>{description}</p>
         </TextBoxThree>
-      </SessionTwoWrapper>
-    </SessionWrapper>
+      </SectionTwoWrapper>
+    </SectionWrapper>
   );
 }
 
-export default SessionThree;
+export default SectionThree;

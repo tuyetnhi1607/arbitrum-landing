@@ -6,6 +6,7 @@
   --blue: #38a0f0;
   --max-content-width: 1440px;
   --mid-grey-darker: #46484a;
+  --mid-grey-darker-2: #48545c;
 }
 
 .App{
@@ -51,7 +52,6 @@ main>section{
     display: block;
   }
   main>section{
-    scroll-snap-align: center;
     min-height: 100vh;
   }
 }
