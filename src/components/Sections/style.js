@@ -5,10 +5,11 @@ export const scaleVariants = {
   offscreen: {
     scale: 0.3,
     opacity: 0.4,
-    y: 100,
+    y: '100vh',
     transition: {
-      duration: 0.6,
+      duration: 1,
       ease: "easeInOut",
+      delay: 0.3,
     },
   },
   onscreen: {
@@ -16,8 +17,9 @@ export const scaleVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 1,
       ease: "easeInOut",
+      delay: 0.3,
     },
   },
 };
@@ -81,6 +83,9 @@ export const SectionTwoWrapper = styled(motion.div)`
     justify-content: space-evenly;
     flex-direction: ${({ reverse }) => (!!reverse ? "row-reverse" : "row")};
     gap: 10%;
+    overflow-y: hidden;
+    width: 100%;
+    height: 100%;
   }
 `;
 
