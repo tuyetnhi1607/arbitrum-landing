@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
-
+import * as rdd from "react-device-detect";
 export const scaleVariants = {
   offscreen: {
     scale: 0.3,
     opacity: 0.4,
-    y: '100vh',
+    y: rdd.isMobile ? 0 : '100vh',
     transition: {
-      duration: 1,
+      duration: rdd.isMobile ? 0.5 : 1,
       ease: "easeInOut",
       delay: 0.3,
     },
@@ -17,7 +17,7 @@ export const scaleVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1,
+      duration: rdd.isMobile ? 0.5 : 1,
       ease: "easeInOut",
       delay: 0.3,
     },
