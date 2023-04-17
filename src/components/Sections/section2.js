@@ -12,9 +12,10 @@ function SectionTwo({
   image = "",
   reverse = false,
   children,
+  id,
 }) {
   return (
-    <SectionWrapper>
+    <SectionWrapper id={id}>
       {children}
       <SectionTwoWrapper
         initial="offscreen"

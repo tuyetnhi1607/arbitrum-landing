@@ -1,9 +1,9 @@
-import React from 'react'
-import { SectionOneWrapper, SectionWrapper } from './style'
+import React from "react";
+import { SectionOneWrapper, SectionWrapper } from "./style";
 
-function SectionOne() {
+function SectionOne({ id }) {
   return (
-    <SectionWrapper>
+    <SectionWrapper id={id}>
       <SectionOneWrapper>
         <p>
           <strong>
@@ -15,4 +15,4 @@ function SectionOne() {
   );
 }
 
-export default SectionOne
+export default SectionOne;

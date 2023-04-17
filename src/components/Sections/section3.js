@@ -6,9 +6,9 @@ import {
   scaleVariants,
 } from "./style";
 
-function SectionThree({ description = "", reverse = false, children }) {
+function SectionThree({ description = "", reverse = false, children, id }) {
   return (
-    <SectionWrapper>
+    <SectionWrapper id={id}>
       {children}
       <SectionTwoWrapper
         initial="offscreen"

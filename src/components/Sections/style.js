@@ -28,7 +28,7 @@ export const SectionWrapper = styled.section`
   position: relative;
   width: 100%;
   max-width: var(--max-content-width);
-  padding: 60px 20px;
+  padding: 60px 20px 60px 60px;
   height: 100vh;
   display: flex;
   align-items: center;
