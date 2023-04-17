@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 const animStar = keyframes`
@@ -137,3 +138,10 @@ export const StarsWrapper = styled.div`
       1485px 1533px #fff;
   }
 `;
+
+export const Math = styled(motion.div)`
+  color: #fff;
+  position: absolute;
+  z-index: 100;
+  opacity: 0.3;
+`
